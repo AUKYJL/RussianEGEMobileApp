@@ -90,9 +90,11 @@ class TheoryExModeFragment : Fragment() {
 //        adapter.addTheoryFragment(theoryFragment = TheoryFragment(title,desc))
 //        adapter.addTheoryFragment(theoryFragment = TheoryFragment(title,desc))
 
+        val numberOfTask = arguments?.getInt("numberOfTask")
+
         lifecycleScope.launch(Dispatchers.IO) {
             //theoryDao.insertTheory(Theory(0,"Первая задачка"))
-            val theory = theoryDao.getOneTheoryText(2)
+            val theory = theoryDao.getOneTheoryText(numberOfTask!!)
             //Log.d("MyLog","${theories.size} dates")
             val textMapper = TextToTitleAndDescTextMapper()
             Log.d("MyLog","${theory.id} ${theory.theoryText}")
