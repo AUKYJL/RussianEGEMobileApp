@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">RussianEGEMobileApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="play_name">Начать</string>
+    <string name="stats_text">Статистика</string>
+    <string name="achievs_text">Достижения</string>
+    <string name="themes_text">Темы</string>
+
+    <string name="back_text">Назад</string>
+    <string name="select_mode_text">Выберите режим</string>
+    <string name="theory_text">Теория</string>
+    <string name="dict_text">Словарь</string>
+    <string name="test_text">Тест</string>
+
+    <string name="select_task_text">Выберите задание</string>
+    <string name="task1_text">1. Средства связи предложений в тексте</string>
+    <string name="task2_text">2. Определение лексического значения слова</string>
+    <string name="task3_text">3. Информационная обработка текстов различных стилей и жанров</string>
+    <string name="task4_text">4. Постановка ударения</string>
+    <string name="task5_text">5. Употребление паронимов</string>
+    <string name="task6_text">6. Лексические нормы</string>
+    <string name="task7_text">7. Морфологические нормы (образование форм слова)</string>
+    <string name="task8_text">8. Синтаксические нормы. Нормы согласования. Нормы управления</string>
+    <string name="task9_text">9. Правописание корней</string>
+    <string name="task10_text">10. Правописание приставок</string>
+    <string name="task11_text">11. Правописание суффиксов (кроме -Н-/-НН-)</string>
+    <string name="task12_text">12. Правописание личных окончаний глаголов и суффиксов причастий</string>
+    <string name="task13_text">13. Правописание НЕ и НИ</string>
+    <string name="task14_text">14. Слитное, дефисное, раздельное написание слов</string>
+    <string name="task15_text">15. Правописание -Н- и -НН- в суффиксах</string>
+    <string name="task16_text">16. Пунктуация в сложносочиненном предложении и в предложении с однородными членами</string>
+    <string name="task17_text">17. Знаки препинания в предложениях с обособленными членами</string>
+    <string name="task18_text">18. Знаки препинания при словах и конструкциях, не связанных с членами предложения</string>
+    <string name="task19_text">19. Знаки препинания в сложноподчиненном предложении</string>
+    <string name="task20_text">20. Знаки препинания в сложных предложениях с разными видами связи</string>
+    <string name="task21_text">21. Постановка знаков препинания в различных случаях</string>
+    <string name="task22_text">22. Смысловая и композиционная целостность текста</string>
+    <string name="task23_text">23. Функционально-смысловые типы речи</string>
+    <string name="task24_text">24. Лексическое значение слова</string>
+    <string name="task25_text">25. Средства связи предложений в тексте</string>
+    <string name="task26_text">26. Языковые средства выразительности</string>
+
+</resources>

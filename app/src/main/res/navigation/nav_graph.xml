@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/dictModeFragment"
+        android:name="com.example.russianegemobileapp.views.screens.DictModeFragment"
+        android:label="fragment_dict_mode"
+        tools:layout="@layout/fragment_dict_mode" >
+        <action
+            android:id="@+id/action_dictModeFragment_to_modeSelectionFragment"
+            app:destination="@id/modeSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.russianegemobileapp.views.screens.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_modeSelectionFragment"
+            app:destination="@id/modeSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modeSelectionFragment"
+        android:name="com.example.russianegemobileapp.views.screens.ModeSelectionFragment"
+        android:label="fragment_mode_selection"
+        tools:layout="@layout/fragment_mode_selection" >
+        <action
+            android:id="@+id/action_modeSelectionFragment_to_theoryModeFragment"
+            app:destination="@id/theoryModeFragment" />
+        <action
+            android:id="@+id/action_modeSelectionFragment_to_dictModeFragment"
+            app:destination="@id/dictModeFragment" />
+        <action
+            android:id="@+id/action_modeSelectionFragment_to_testModeFragment"
+            app:destination="@id/testModeFragment" />
+        <action
+            android:id="@+id/action_modeSelectionFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testModeFragment"
+        android:name="com.example.russianegemobileapp.views.screens.TestModeFragment"
+        android:label="fragment_test_mode"
+        tools:layout="@layout/fragment_test_mode" >
+        <action
+            android:id="@+id/action_testModeFragment_to_modeSelectionFragment"
+            app:destination="@id/modeSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/theoryModeFragment"
+        android:name="com.example.russianegemobileapp.views.screens.TheoryModeFragment"
+        android:label="fragment_theory_mode"
+        tools:layout="@layout/fragment_theory_mode" >
+        <action
+            android:id="@+id/action_theoryModeFragment_to_theoryExModeFragment"
+            app:destination="@id/theoryExModeFragment" />
+        <action
+            android:id="@+id/action_theoryModeFragment_to_modeSelectionFragment"
+            app:destination="@id/modeSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/theoryExModeFragment"
+        android:name="com.example.russianegemobileapp.views.screens.TheoryExModeFragment"
+        android:label="fragment_theory_ex_mode"
+        tools:layout="@layout/fragment_theory_ex_mode" >
+        <action
+            android:id="@+id/action_theoryExModeFragment_to_theoryModeFragment"
+            app:destination="@id/theoryModeFragment" />
+    </fragment>
+</navigation>
