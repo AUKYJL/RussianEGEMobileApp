@@ -1,4 +1,4 @@
-package com.example.russianegemobileapp.models.db.local
+package com.example.russianegemobileapp.models.db.local.theory
 
 import androidx.room.*
 
@@ -18,5 +18,5 @@ interface TheoryDao {
         SELECT * FROM Theory
         WHERE id=:id
     """)
-    fun getOneTheoryText(id:Int):Theory
+    fun getOneTheoryText(id:Int): Theory
 }

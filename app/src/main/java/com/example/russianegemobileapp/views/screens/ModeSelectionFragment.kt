@@ -33,6 +33,12 @@ class ModeSelectionFragment : Fragment() {
         binding.bTheory?.setOnClickListener {
             (activity as MainActivity).navController.navigate(R.id.action_modeSelectionFragment_to_theoryModeFragment)
         }
+        binding.bDict?.setOnClickListener {
+            (activity as MainActivity).navController.navigate(R.id.action_modeSelectionFragment_to_dictModeFragment)
+        }
+        binding.bTest?.setOnClickListener {
+            (activity as MainActivity).navController.navigate(R.id.action_modeSelectionFragment_to_testModeFragment)
+        }
     }
 
 

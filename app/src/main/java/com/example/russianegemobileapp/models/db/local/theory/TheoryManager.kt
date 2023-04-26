@@ -1,4 +1,4 @@
-package com.example.russianegemobileapp.models.db.local
+package com.example.russianegemobileapp.models.db.local.theory
 
 import android.content.Context
 import androidx.room.Room

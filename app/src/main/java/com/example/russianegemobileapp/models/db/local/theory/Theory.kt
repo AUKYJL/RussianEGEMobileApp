@@ -1,4 +1,4 @@
-package com.example.russianegemobileapp.models.db.local
+package com.example.russianegemobileapp.models.db.local.theory
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

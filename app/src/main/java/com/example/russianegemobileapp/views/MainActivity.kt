@@ -3,27 +3,23 @@ package com.example.russianegemobileapp.views
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowInsets
-import android.view.WindowInsetsController
 import android.view.WindowManager
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.room.Room
 import com.example.russianegemobileapp.R
 import com.example.russianegemobileapp.databinding.ActivityMainBinding
-import com.example.russianegemobileapp.models.db.TextToTitleAndDescTextMapper
-import com.example.russianegemobileapp.models.db.local.TheoryDao
-import com.example.russianegemobileapp.models.db.local.TheoryDatabase
-import com.example.russianegemobileapp.models.db.local.TheoryManager
+import com.example.russianegemobileapp.models.db.local.theory.TheoryDao
+import com.example.russianegemobileapp.models.db.local.theory.TheoryDatabase
+import com.example.russianegemobileapp.models.db.local.theory.TheoryManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     lateinit var binding : ActivityMainBinding
-    lateinit var theoryDao:TheoryDao
+    lateinit var theoryDao: TheoryDao
     val tm = TheoryManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {

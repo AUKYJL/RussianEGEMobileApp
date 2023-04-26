@@ -6,9 +6,7 @@ import android.window.OnBackInvokedCallback
 import androidx.lifecycle.*
 import androidx.room.Room
 import com.example.russianegemobileapp.models.db.TextToTitleAndDescTextMapper
-import com.example.russianegemobileapp.models.db.local.TheoryDao
-import com.example.russianegemobileapp.models.db.local.TheoryDatabase
-import com.example.russianegemobileapp.models.db.local.TheoryManager
+import com.example.russianegemobileapp.models.db.local.theory.TheoryDatabase
 import com.example.russianegemobileapp.models.theory.TheoryFragment
 import kotlinx.coroutines.*
 

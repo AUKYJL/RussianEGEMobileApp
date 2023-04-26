@@ -10,22 +10,19 @@ import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.example.russianegemobileapp.R
 import com.example.russianegemobileapp.databinding.FragmentTheoryExModeBinding
 import com.example.russianegemobileapp.models.db.TextToTitleAndDescTextMapper
-import com.example.russianegemobileapp.models.db.local.TheoryDao
-import com.example.russianegemobileapp.models.db.local.TheoryDatabase
-import com.example.russianegemobileapp.models.db.local.TheoryManager
+import com.example.russianegemobileapp.models.db.local.theory.TheoryDao
+import com.example.russianegemobileapp.models.db.local.theory.TheoryDatabase
 import com.example.russianegemobileapp.models.theory.TheoryFragment
 import com.example.russianegemobileapp.models.theory.TheoryFragmentAdapter
 import com.example.russianegemobileapp.viewModels.TheoryExModeViewModel
 import com.example.russianegemobileapp.viewModels.factories.TheoryExModeViewModelFactory
 import com.example.russianegemobileapp.views.MainActivity
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 

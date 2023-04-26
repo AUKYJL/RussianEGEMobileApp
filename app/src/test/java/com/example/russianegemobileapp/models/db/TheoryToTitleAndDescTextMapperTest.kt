@@ -1,6 +1,6 @@
 package com.example.russianegemobileapp.models.db
 
-import com.example.russianegemobileapp.models.db.local.Theory
+import com.example.russianegemobileapp.models.db.local.theory.Theory
 import org.junit.Test
 import org.junit.jupiter.api.Assertions
 import org.mockito.Mockito

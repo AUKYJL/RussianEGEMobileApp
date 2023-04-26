@@ -1,7 +1,7 @@
 package com.example.russianegemobileapp.models.db
 
 import android.util.Log
-import com.example.russianegemobileapp.models.db.local.Theory
+import com.example.russianegemobileapp.models.db.local.theory.Theory
 
 const val SYMBOLS_FOR_TITLE = "<t>"
 
@@ -11,7 +11,7 @@ class TextToTitleAndDescTextMapper{
      * где в одном массиве содержатся все тайтлы этой теории, а в другом - описания
      */
 
-    fun execute(theory:Theory): List<ArrayList<String>> {
+    fun execute(theory: Theory): List<ArrayList<String>> {
         val text = theory.theoryText
         val lines = text.split("\n")
         val titles = getTitles(lines)

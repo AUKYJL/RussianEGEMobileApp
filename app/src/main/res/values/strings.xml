@@ -3,7 +3,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-
     <string name="play_name">Начать</string>
     <string name="stats_text">Статистика</string>
     <string name="achievs_text">Достижения</string>
@@ -42,5 +41,11 @@
     <string name="task24_text">24. Лексическое значение слова</string>
     <string name="task25_text">25. Средства связи предложений в тексте</string>
     <string name="task26_text">26. Языковые средства выразительности</string>
+
+    <string name="select_dict">Выберите словарь</string>
+    <string name="dict_paronym">Словарь паронимов</string>
+    <string name="dict_orthoepic">Орфоэпический словарь</string>
+
+    <string name="test_all">Все подряд</string>
 
 </resources>
