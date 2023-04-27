@@ -35,6 +35,9 @@ class MainFragment : Fragment() {
         binding.bStart?.setOnClickListener{
             (activity as MainActivity).navController.navigate(R.id.action_mainFragment_to_modeSelectionFragment)
         }
+        binding.bAchiev?.setOnClickListener{
+            (activity as MainActivity).navController.navigate(R.id.action_mainFragment_to_achievMode)
+        }
     }
 
 }

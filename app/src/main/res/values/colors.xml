@@ -12,4 +12,12 @@
     <color name="orange">#FCAA17</color>
     <color name="light_gray">#D9D9D9</color>
     <color name="gray">#505050</color>
+
+
+    <color name="ring_gray">#DDDDDD</color>
+    <color name="ring_red">#FF1709</color>
+    <color name="ring_orange">#FB8110</color>
+    <color name="ring_yellow">#F3DB00</color>
+    <color name="ring_green">#186505</color>
+    <color name="ring_lime">#2BD600</color>
 </resources>

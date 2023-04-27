@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_dictModeFragment_to_modeSelectionFragment"
             app:destination="@id/modeSelectionFragment" />
+        <action
+            android:id="@+id/action_dictModeFragment_to_dictInModeFragment"
+            app:destination="@id/dictInModeFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -22,6 +25,9 @@
         <action
             android:id="@+id/action_mainFragment_to_modeSelectionFragment"
             app:destination="@id/modeSelectionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_achievMode"
+            app:destination="@id/achievMode" />
     </fragment>
     <fragment
         android:id="@+id/modeSelectionFragment"
@@ -70,5 +76,23 @@
         <action
             android:id="@+id/action_theoryExModeFragment_to_theoryModeFragment"
             app:destination="@id/theoryModeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/achievMode"
+        android:name="com.example.russianegemobileapp.views.screens.AchievMode"
+        android:label="fragment_achiev_mode"
+        tools:layout="@layout/fragment_achiev_mode" >
+        <action
+            android:id="@+id/action_achievMode_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dictInModeFragment"
+        android:name="com.example.russianegemobileapp.views.screens.DictInModeFragment"
+        android:label="fragment_dict_in_mode"
+        tools:layout="@layout/fragment_dict_in_mode" >
+        <action
+            android:id="@+id/action_dictInModeFragment_to_dictModeFragment"
+            app:destination="@id/dictModeFragment" />
     </fragment>
 </navigation>
