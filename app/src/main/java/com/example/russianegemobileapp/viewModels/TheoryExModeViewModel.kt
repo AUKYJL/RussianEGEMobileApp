@@ -5,7 +5,7 @@ import android.util.Log
 import android.window.OnBackInvokedCallback
 import androidx.lifecycle.*
 import androidx.room.Room
-import com.example.russianegemobileapp.models.db.TextToTitleAndDescTextMapper
+import com.example.russianegemobileapp.models.db.TheoryTextToTitleAndDescTextMapper
 import com.example.russianegemobileapp.models.db.local.theory.TheoryDatabase
 import com.example.russianegemobileapp.models.theory.TheoryFragment
 import kotlinx.coroutines.*
@@ -51,7 +51,7 @@ class TheoryExModeViewModel(val context: Context) : ViewModel() {
             arrayListOf("Заголовок1", "Еще заголовок 2"),
             arrayListOf("Какой-то текст для описания задачки все-такое", "Еще текст")
         )
-        val textMapper = TextToTitleAndDescTextMapper()
+        val textMapper = TheoryTextToTitleAndDescTextMapper()
         //запрос к дб и получение текста
         viewModelScope.launch(Dispatchers.IO) {
             withContext(Dispatchers.Main) {
@@ -88,7 +88,7 @@ class TheoryExModeViewModel(val context: Context) : ViewModel() {
             Log.e("MyLog", "entered")
             val task = async {
                 viewModelScope.launch(Dispatchers.IO) {
-                    val textMapper = TextToTitleAndDescTextMapper()
+                    val textMapper = TheoryTextToTitleAndDescTextMapper()
                     //запрос к дб и получение текста
                     val db = Room.databaseBuilder(
                         context,

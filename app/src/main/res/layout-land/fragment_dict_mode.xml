@@ -85,7 +85,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/bDict1"
+                        android:id="@+id/bDictParonyms"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal|center_vertical"
@@ -113,7 +113,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/bDict2"
+                        android:id="@+id/bDictOrhoepy"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal|center_vertical"

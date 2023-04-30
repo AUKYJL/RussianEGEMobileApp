@@ -1,30 +1,32 @@
 package com.example.russianegemobileapp.models.db
 
 import android.util.Log
-import com.example.russianegemobileapp.models.db.local.theory.Theory
+import com.example.russianegemobileapp.models.Constants
+import com.example.russianegemobileapp.models.db.local.dict.Dict
 
-const val SYMBOLS_FOR_TITLE = "<t>"
 
-class TextToTitleAndDescTextMapper{
+class DictTextToTitleAndDescTextMapper{
     /**
      * Преобразует полученный текст теории о задании из базы данных в массив стрингов,
      * где в одном массиве содержатся все тайтлы этой теории, а в другом - описания
      */
 
-    fun execute(theory: Theory): List<ArrayList<String>> {
-        val text = theory.theoryText
+    fun execute(dict: Dict): List<ArrayList<String>> {
+        val text = dict.dictText
         val lines = text.split("\n")
         val titles = getTitles(lines)
         val descs = getDescs(lines)
         Log.d("MyLog","execute")
+        Log.d("MyLog","$titles тайтлс")
+        Log.d("MyLog","$descs описание")
         return listOf(titles,descs)
     }
 
     private fun getTitles(textLines: List<String>): ArrayList<String> {
         val result = ArrayList<String>()
         textLines.forEach {
-            if (it.contains(SYMBOLS_FOR_TITLE)) {
-                result.add(it.drop(SYMBOLS_FOR_TITLE.length).trim())
+            if (it.contains(Constants.SYMBOLS_FOR_TITLE)) {
+                result.add(it.drop(Constants.SYMBOLS_FOR_TITLE.length).trim())
             }
         }
         Log.d("MyLog","execute1")
@@ -36,16 +38,15 @@ class TextToTitleAndDescTextMapper{
         var textForOneTextView = ""
         var id = -1
         textLines.forEach {
-            if (it.contains(SYMBOLS_FOR_TITLE)) {
+            if (it.contains(Constants.SYMBOLS_FOR_TITLE)) {
                 if (id >= 0) {
                     result.add(textForOneTextView)
                     textForOneTextView = ""
                 }
                 id++
             }
-            if (!it.contains(SYMBOLS_FOR_TITLE) && !it.isEmpty() && id >= 0) {
-                textForOneTextView += " ${it.trim()}"
-                textForOneTextView = textForOneTextView.trim()
+            if (!it.contains(Constants.SYMBOLS_FOR_TITLE) && !it.isEmpty() && id >= 0) {
+                textForOneTextView += "${it}\n"
             }
         }
         result.add(textForOneTextView)

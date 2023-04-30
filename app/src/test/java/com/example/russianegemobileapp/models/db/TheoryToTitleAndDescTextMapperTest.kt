@@ -16,23 +16,23 @@ val TEXT_FOR_TEST = """
             Еще текст
         """.trimIndent()
 
-internal class TextToTitleAndDescTextMapperTest {
+internal class TheoryTextToTitleAndDescTextMapperTest {
 
     val theory = mock<Theory>()
 
     @Test
     fun `should return strings with only titles`(){
         Mockito.`when`(theory.theoryText).thenReturn(TEXT_FOR_TEST)
-        val  textToTitleAndDescTextMapper = TextToTitleAndDescTextMapper()
-        val actual = textToTitleAndDescTextMapper.execute(theory).get(0)
+        val  theoryTextToTitleAndDescTextMapper = TheoryTextToTitleAndDescTextMapper()
+        val actual = theoryTextToTitleAndDescTextMapper.execute(theory).get(0)
         val excepted = arrayListOf("Заголовок1","Еще заголовок 2")
         Assertions.assertEquals(excepted,actual)
     }
     @Test
     fun `should return strings with only descs`(){
         Mockito.`when`(theory.theoryText).thenReturn(TEXT_FOR_TEST)
-        val  textToTitleAndDescTextMapper = TextToTitleAndDescTextMapper()
-        val actual = textToTitleAndDescTextMapper.execute(theory).get(1)
+        val  theoryTextToTitleAndDescTextMapper = TheoryTextToTitleAndDescTextMapper()
+        val actual = theoryTextToTitleAndDescTextMapper.execute(theory).get(1)
         val excepted = arrayListOf("Какой-то текст для описания задачки все-такое","Еще текст")
         Assertions.assertEquals(excepted,actual)
     }
@@ -40,8 +40,8 @@ internal class TextToTitleAndDescTextMapperTest {
     @Test
     fun `should return 2 arrays`() {
         Mockito.`when`(theory.theoryText).thenReturn(TEXT_FOR_TEST)
-        val  textToTitleAndDescTextMapper = TextToTitleAndDescTextMapper()
-        val actual = textToTitleAndDescTextMapper.execute(theory)
+        val  theoryTextToTitleAndDescTextMapper = TheoryTextToTitleAndDescTextMapper()
+        val actual = theoryTextToTitleAndDescTextMapper.execute(theory)
         val excepted = arrayListOf(arrayListOf("Заголовок1","Еще заголовок 2"),arrayListOf("Какой-то текст для описания задачки все-такое","Еще текст"))
         Assertions.assertEquals(excepted,actual)
     }

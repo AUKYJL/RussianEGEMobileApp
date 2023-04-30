@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.example.russianegemobileapp.R
 import com.example.russianegemobileapp.databinding.FragmentTheoryExModeBinding
-import com.example.russianegemobileapp.models.db.TextToTitleAndDescTextMapper
+import com.example.russianegemobileapp.models.Constants
+import com.example.russianegemobileapp.models.db.TheoryTextToTitleAndDescTextMapper
 import com.example.russianegemobileapp.models.db.local.theory.TheoryDao
 import com.example.russianegemobileapp.models.db.local.theory.TheoryDatabase
 import com.example.russianegemobileapp.models.theory.TheoryFragment
@@ -53,9 +54,9 @@ class TheoryExModeFragment : Fragment() {
 
         val db = Room.databaseBuilder(
             (activity as MainActivity).applicationContext,
-            TheoryDatabase::class.java, "thDB"
+            TheoryDatabase::class.java, Constants.DB_THEORY_NAME
         )
-            .createFromAsset("theory_database.db")
+            .createFromAsset(Constants.DB_THEORY_PATH)
             .build()
         theoryDao = db.theoryDao()
 
@@ -93,7 +94,7 @@ class TheoryExModeFragment : Fragment() {
             //theoryDao.insertTheory(Theory(0,"Первая задачка"))
             val theory = theoryDao.getOneTheoryText(numberOfTask!!)
             //Log.d("MyLog","${theories.size} dates")
-            val textMapper = TextToTitleAndDescTextMapper()
+            val textMapper = TheoryTextToTitleAndDescTextMapper()
             Log.d("MyLog","${theory.id} ${theory.theoryText}")
             val text = textMapper.execute(theory)
             val titles = text[0]
@@ -101,8 +102,11 @@ class TheoryExModeFragment : Fragment() {
             Log.d("MyLog","${titles}")
             Log.d("MyLog","${descs}")
             withContext(Dispatchers.Main){
-                adapter.addTheoryFragment(theoryFragment = TheoryFragment(titles[0],descs[0]))
-                adapter.addTheoryFragment(theoryFragment = TheoryFragment(titles[1],descs[1]))
+                for (i in 0 until titles.size){
+                    adapter.addTheoryFragment(theoryFragment = TheoryFragment(titles[i],descs[i]))
+                }
+
+
             }
 
 
