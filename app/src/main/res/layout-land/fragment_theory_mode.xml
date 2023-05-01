@@ -24,8 +24,9 @@
 
             <LinearLayout
                 android:id="@+id/backBtn"
-                android:layout_width="96dp"
+                android:layout_width="0dp"
                 android:layout_height="59dp"
+                android:layout_weight="0.1"
                 android:clickable="true"
                 android:gravity="clip_horizontal|center_vertical"
                 android:onClick="back"
@@ -50,21 +51,26 @@
             </LinearLayout>
 
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="0.1" />
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="378dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:text="@string/select_task_text"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="32sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2" />
 
         </LinearLayout>
 

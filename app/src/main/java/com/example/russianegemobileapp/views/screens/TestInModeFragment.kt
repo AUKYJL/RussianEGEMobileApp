@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.russianegemobileapp.R
+import com.example.russianegemobileapp.databinding.FragmentGetAnswerPopUpBinding
 import com.example.russianegemobileapp.databinding.FragmentTestInModeBinding
 import com.example.russianegemobileapp.models.Constants
 import com.example.russianegemobileapp.views.MainActivity
@@ -35,6 +36,10 @@ class TestInModeFragment : Fragment() {
             bundle.putInt(Constants.BUNDLE_THEORY_KEY,numberOfTask)
             bundle.putBoolean(Constants.BUNDLE_IS_IT_FROM_THEORY_KEY,false)
             (activity as MainActivity).navController.navigate(R.id.action_testInModeFragment_to_theoryExModeFragment,bundle)
+        }
+        binding.getAnswer?.setOnClickListener{
+            val showGetAnswerPopUp = GetAnswerPopUpFragment()
+            showGetAnswerPopUp.show((activity as MainActivity).supportFragmentManager,"ShowPopUp")
         }
     }
 }

@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         //Log.d("MyLog",AppDatabase.INSTANCE.toString())
 
+        val t = resources.getString(R.string.open_one_number_answer,123)
+        Log.d("MyLog",t)
+
         //Log.d("MyLog",AppDatabase.INSTANCE.toString())
 
 

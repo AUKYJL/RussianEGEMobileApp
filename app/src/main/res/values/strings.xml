@@ -54,4 +54,7 @@
 
     <string name="dict_search_words">Поиск по слову</string>
 
+    <string name="get_answer_text">Узнать ответ</string>
+    <string name="open_one_number_answer">Открыть %1$d цифру верного ответа</string>
+
 </resources>
