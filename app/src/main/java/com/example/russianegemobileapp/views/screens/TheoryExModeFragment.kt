@@ -48,10 +48,8 @@ class TheoryExModeFragment : Fragment() {
         btnsBinding()
         //addTextViews()
         init()
-        addObserver()
-        val numberOfTask = arguments?.getInt("numberOfTask")
+        //addObserver()
         //vm.createTheoryFragmentList(numberOfTask!!)
-
         val db = Room.databaseBuilder(
             (activity as MainActivity).applicationContext,
             TheoryDatabase::class.java, Constants.DB_THEORY_NAME
@@ -88,7 +86,7 @@ class TheoryExModeFragment : Fragment() {
 //        adapter.addTheoryFragment(theoryFragment = TheoryFragment(title,desc))
 //        adapter.addTheoryFragment(theoryFragment = TheoryFragment(title,desc))
 
-        val numberOfTask = arguments?.getInt("numberOfTask")
+        val numberOfTask = arguments?.getInt(Constants.BUNDLE_THEORY_KEY)
 
         lifecycleScope.launch(Dispatchers.IO) {
             //theoryDao.insertTheory(Theory(0,"Первая задачка"))
@@ -170,10 +168,21 @@ class TheoryExModeFragment : Fragment() {
 
     }
 
-    fun btnsBinding() {
-        binding.backBtn?.setOnClickListener {
-            (activity as MainActivity).navController.navigate(R.id.action_theoryExModeFragment_to_theoryModeFragment)
+    private fun bindBackBtn(isFromTheory:Boolean){
+        if (isFromTheory){
+            binding.backBtn?.setOnClickListener {
+                (activity as MainActivity).navController.navigate(R.id.action_theoryExModeFragment_to_theoryModeFragment)
+            }
+        }else{
+            binding.backBtn?.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt(Constants.BUNDLE_TEST_KEY,arguments?.getInt(Constants.BUNDLE_THEORY_KEY)!!)
+                (activity as MainActivity).navController.navigate(R.id.action_theoryExModeFragment_to_testInModeFragment,bundle)
+            }
         }
+    }
+    fun btnsBinding() {
+        bindBackBtn(arguments?.getBoolean(Constants.BUNDLE_IS_IT_FROM_THEORY_KEY)!!)
     }
 
 }

@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_testModeFragment_to_modeSelectionFragment"
             app:destination="@id/modeSelectionFragment" />
+        <action
+            android:id="@+id/action_testModeFragment_to_testInModeFragment"
+            app:destination="@id/testInModeFragment" />
     </fragment>
     <fragment
         android:id="@+id/theoryModeFragment"
@@ -76,6 +79,9 @@
         <action
             android:id="@+id/action_theoryExModeFragment_to_theoryModeFragment"
             app:destination="@id/theoryModeFragment" />
+        <action
+            android:id="@+id/action_theoryExModeFragment_to_testInModeFragment"
+            app:destination="@id/testInModeFragment" />
     </fragment>
     <fragment
         android:id="@+id/achievMode"
@@ -94,5 +100,17 @@
         <action
             android:id="@+id/action_dictInModeFragment_to_dictModeFragment"
             app:destination="@id/dictModeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testInModeFragment"
+        android:name="com.example.russianegemobileapp.views.screens.TestInModeFragment"
+        android:label="fragment_test_in_mode"
+        tools:layout="@layout/fragment_test_in_mode" >
+        <action
+            android:id="@+id/action_testInModeFragment_to_testModeFragment"
+            app:destination="@id/testModeFragment" />
+        <action
+            android:id="@+id/action_testInModeFragment_to_theoryExModeFragment"
+            app:destination="@id/theoryExModeFragment" />
     </fragment>
 </navigation>

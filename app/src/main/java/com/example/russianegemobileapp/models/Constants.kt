@@ -9,7 +9,12 @@ object Constants {
     const val THEORY_TABLE_NAME = "Theory"
     const val DICT_TABLE_NAME = "Dict"
 
-    const val BUNDLE_DICT_KEY = "Dict"
+    const val BUNDLE_DICT_KEY = "DictKey"
     const val BUNDLE_DICT_PUT_PARONYM = "Paronym"
     const val BUNDLE_DICT_PUT_ORTHOEPY = "Orthoepy"
+
+    const val BUNDLE_TEST_KEY = "TestKey"
+
+    const val BUNDLE_THEORY_KEY = "TheoryKey"
+    const val BUNDLE_IS_IT_FROM_THEORY_KEY = "IsItFromTheoryKey"
 }

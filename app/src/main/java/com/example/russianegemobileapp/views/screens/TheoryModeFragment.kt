@@ -12,6 +12,7 @@ import androidx.core.view.forEach
 import androidx.fragment.app.viewModels
 import com.example.russianegemobileapp.R
 import com.example.russianegemobileapp.databinding.FragmentTheoryModeBinding
+import com.example.russianegemobileapp.models.Constants
 import com.example.russianegemobileapp.viewModels.TheoryExModeViewModel
 import com.example.russianegemobileapp.viewModels.factories.TheoryExModeViewModelFactory
 import com.example.russianegemobileapp.views.MainActivity
@@ -31,6 +32,9 @@ class TheoryModeFragment : Fragment() {
         super.onStart()
         btnsBinding()
     }
+
+
+
     fun btnsBinding(){
         binding.backBtn?.setOnClickListener {
             (activity as MainActivity).navController.navigate(R.id.action_theoryModeFragment_to_modeSelectionFragment)
@@ -42,7 +46,8 @@ class TheoryModeFragment : Fragment() {
                     val tv = it.getChildAt(0) as TextView
                     val numberOfTask = tv.text.toString().slice(0..1).replace(".","").toInt()
 
-                    bundle.putInt("numberOfTask",numberOfTask)
+                    bundle.putInt(Constants.BUNDLE_THEORY_KEY,numberOfTask)
+                    bundle.putBoolean(Constants.BUNDLE_IS_IT_FROM_THEORY_KEY,true)
                 }
                 (activity as MainActivity).navController.navigate(R.id.action_theoryModeFragment_to_theoryExModeFragment,bundle)
             }

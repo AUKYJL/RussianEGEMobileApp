@@ -76,41 +76,40 @@ class TheoryExModeViewModel(val context: Context) : ViewModel() {
     }
 
 
-    suspend fun loadExText(numberOfTask: Int,callback: OnBackInvokedCallback): Nothing = withContext(Dispatchers.IO) {
-        Log.e("MyLog", "loadExText started")
-        Log.e("MyLog", numberOfTask.toString())
-//        titlesAndDescsTextMutable.value = arrayListOf(
-//            arrayListOf("Заголовок1", "Еще заголовок 2"),
-//            arrayListOf("Какой-то текст для описания задачки все-такое", "Еще текст")
-//        )
-        val res = ArrayList<ArrayList<String>>()
-        runBlocking {
-            Log.e("MyLog", "entered")
-            val task = async {
-                viewModelScope.launch(Dispatchers.IO) {
-                    val textMapper = TheoryTextToTitleAndDescTextMapper()
-                    //запрос к дб и получение текста
-                    val db = Room.databaseBuilder(
-                        context,
-                        TheoryDatabase::class.java, "theoryDB"
-                    )
-                        .createFromAsset("theory_database.db")
-                        .build()
-                    val theoryDao = db.theoryDao()
-
-                    val theory = theoryDao.getOneTheoryText(numberOfTask - 1)
-                    Log.e("MyLog", theory.theoryText)
-                    //titlesAndDescsTextMutable.value = textMapper.execute(theory)
-                    val titles = textMapper.execute(theory)[0]
-                    val descs = textMapper.execute(theory)[1]
-                    res.add(titles)
-                    res.add(descs)
-                }
-            }
-            runBlocking { task.await() }
-
-        }
-        TODO("почему-то не ждет выполнения runBlocking")
-
-    }
+//    suspend fun loadExText(numberOfTask: Int,callback: OnBackInvokedCallback): Nothing = withContext(Dispatchers.IO) {
+//        Log.e("MyLog", "loadExText started")
+//        Log.e("MyLog", numberOfTask.toString())
+////        titlesAndDescsTextMutable.value = arrayListOf(
+////            arrayListOf("Заголовок1", "Еще заголовок 2"),
+////            arrayListOf("Какой-то текст для описания задачки все-такое", "Еще текст")
+////        )
+//        val res = ArrayList<ArrayList<String>>()
+//        runBlocking {
+//            Log.e("MyLog", "entered")
+//            val task = async {
+//                viewModelScope.launch(Dispatchers.IO) {
+//                    val textMapper = TheoryTextToTitleAndDescTextMapper()
+//                    //запрос к дб и получение текста
+//                    val db = Room.databaseBuilder(
+//                        context,
+//                        TheoryDatabase::class.java, "theoryDB"
+//                    )
+//                        .createFromAsset("theory_database.db")
+//                        .build()
+//                    val theoryDao = db.theoryDao()
+//
+//                    val theory = theoryDao.getOneTheoryText(numberOfTask - 1)
+//                    Log.e("MyLog", theory.theoryText)
+//                    //titlesAndDescsTextMutable.value = textMapper.execute(theory)
+//                    val titles = textMapper.execute(theory)[0]
+//                    val descs = textMapper.execute(theory)[1]
+//                    res.add(titles)
+//                    res.add(descs)
+//                }
+//            }
+//            runBlocking { task.await() }
+//
+//        }
+//
+//    }
 }
