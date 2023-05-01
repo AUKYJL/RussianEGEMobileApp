@@ -18,38 +18,50 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_height="59dp"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/backBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:layout_weight="0"
+                android:layout_width="96dp"
+                android:layout_height="59dp"
                 android:clickable="true"
+                android:gravity="clip_horizontal|center_vertical"
                 android:onClick="back"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/imageView"
                     android:layout_width="19dp"
                     android:layout_height="19dp"
-                    android:layout_gravity="right"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/back" />
 
                 <TextView
-                    android:id="@+id/textView19"
+                    android:id="@+id/textView6"
                     android:layout_width="wrap_content"
-                    android:layout_height="19dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/back_text"
-                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
+
             </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="296dp"
+                android:layout_height="38dp"
+                android:background="@drawable/ex_bg"
+                android:iconifiedByDefault="false"
+                android:queryBackground="@android:color/transparent"
+                android:queryHint="@string/dict_search_words" />
 
         </LinearLayout>
 

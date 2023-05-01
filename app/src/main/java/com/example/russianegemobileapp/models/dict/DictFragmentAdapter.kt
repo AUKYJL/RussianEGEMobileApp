@@ -7,15 +7,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.russianegemobileapp.R
 import com.example.russianegemobileapp.databinding.DictFragmentItemBinding
 import com.example.russianegemobileapp.databinding.TheoryFragmentItemBinding
+import com.example.russianegemobileapp.models.db.local.dict.Dict
 
 class DictFragmentAdapter:RecyclerView.Adapter<DictFragmentAdapter.DictFragmentHolder>() {
-    val dictFragmentList = ArrayList<DictFragment>()
+    var dictFragmentList = ArrayList<DictFragment>()
     class DictFragmentHolder(item: View):RecyclerView.ViewHolder(item) {
         val binding = DictFragmentItemBinding.bind(item)
         fun bind(dictFragment: DictFragment) = with(binding){
             title.text = dictFragment.title
             desc.text = dictFragment.desc
         }
+    }
+    fun setFilteredList(list:ArrayList<DictFragment>){
+        dictFragmentList = list
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DictFragmentHolder {

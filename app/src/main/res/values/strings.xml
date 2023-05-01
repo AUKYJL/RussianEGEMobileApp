@@ -51,4 +51,6 @@
 
     <string name="achievements">Достижения</string>
 
+    <string name="dict_search_words">Поиск по слову</string>
+
 </resources>
